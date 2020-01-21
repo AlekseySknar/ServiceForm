@@ -41,10 +41,18 @@ function App() {
             </Typography>
           </div>
 
-          <Grid container spacing={3}>
-            <Grid item xs={12} sm={1} alignContent="space-between">
-              {/*    <PhoneAndroidRoundedIcon fontSize="large" /> */}
-              <a>sss</a>
+          <Grid container spacing={2} alignItems="flex-end">
+            <Grid
+              item
+              xs={12}
+              sm={1}
+              style={{
+                textAlign: "center",
+                paddingBottom: 0,
+                paddingRight: 0
+              }}
+            >
+              <PhoneAndroidRoundedIcon fontSize="large" color="#aaa" />
             </Grid>
             <Grid item xs={12} sm={5}>
               <TextField
