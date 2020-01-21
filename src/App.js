@@ -8,7 +8,7 @@ import Typography from "@material-ui/core/Typography";
 
 import PhoneAndroidRoundedIcon from "@material-ui/icons/PhoneAndroidRounded";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   paperHead: {
     backgroundColor: "#33b5e5",
     height: 68,
@@ -16,13 +16,20 @@ const useStyles = makeStyles({
   },
   media: {
     height: 140,
-    backgroundColor: "#aaa"
+    backgroundColor: "aaa"
   },
   headerText: {
     color: "white",
     paddingTop: 12
+  },
+  gridItem: {
+    padding: 2
+  },
+  container: {
+    width: "auto",
+    margin: theme.spacing(2)
   }
-});
+}));
 
 function App() {
   const myStyles = useStyles();
@@ -41,7 +48,12 @@ function App() {
             </Typography>
           </div>
 
-          <Grid container spacing={2} alignItems="flex-end">
+          <Grid
+            container
+            spacing={2}
+            alignItems="flex-end"
+            className={myStyles.container}
+          >
             <Grid
               item
               xs={12}
@@ -54,7 +66,7 @@ function App() {
             >
               <PhoneAndroidRoundedIcon fontSize="large" color="#aaa" />
             </Grid>
-            <Grid item xs={12} sm={5}>
+            <Grid item xs={12} sm={5} className={myStyles.gridItem}>
               <TextField
                 required
                 id="firstName"
