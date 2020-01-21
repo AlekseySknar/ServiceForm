@@ -10,12 +10,14 @@ import FormGroup from "@material-ui/core/FormGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import DistanceSlider from "./DistanceSlider";
 import Tooltip from "@material-ui/core/Tooltip";
+import Button from "@material-ui/core/Button";
 
 import PhoneAndroidRoundedIcon from "@material-ui/icons/PhoneAndroidRounded";
 
 const useStyles = makeStyles(theme => ({
   paperHead: {
-    backgroundColor: "#33b5e5",
+    backgroundColor: "#3f51b5",
+    opacity: "80%",
     height: 68,
     padding: "5 0"
   },
@@ -90,7 +92,7 @@ function App() {
                 required
                 id="firstName"
                 name="firstName"
-                label="Phone manufacturer"
+                label="Производитель"
                 fullWidth
                 autoComplete="fname"
               />
@@ -101,7 +103,7 @@ function App() {
                 required
                 id="lastName"
                 name="lastName"
-                label="Phone model"
+                label="Модель"
                 fullWidth
                 autoComplete="lname"
               />
@@ -131,6 +133,12 @@ function App() {
                 variant="outlined"
                 fullWidth
               />
+            </Grid>
+
+            <Grid item xs={12}>
+              <Button variant="contained" color="primary" fullWidth>
+                Поиск...
+              </Button>
             </Grid>
           </Grid>
         </Paper>
