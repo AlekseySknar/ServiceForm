@@ -8,6 +8,8 @@ import Typography from "@material-ui/core/Typography";
 import Checkbox from "@material-ui/core/Checkbox";
 import FormGroup from "@material-ui/core/FormGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
+import DistanceSlider from "./DistanceSlider";
+import Tooltip from "@material-ui/core/Tooltip";
 
 import PhoneAndroidRoundedIcon from "@material-ui/icons/PhoneAndroidRounded";
 
@@ -31,11 +33,17 @@ const useStyles = makeStyles(theme => ({
   container: {
     width: "auto",
     margin: theme.spacing(2)
+  },
+  gridContentEnd: {
+    display: "inline-flex",
+    justifyContent: "flex-end"
   }
 }));
 
 function App() {
   const myStyles = useStyles();
+  const deliveriTooltip =
+    "Наш курьер увезет ваше устройство, и больше вы его не увидите!";
 
   return (
     <div>
@@ -91,14 +99,19 @@ function App() {
               />
             </Grid>
 
-            <Grid item xs={12} sm={6}>
-              <FormControlLabel
-                control={<Checkbox value="checkedB" color="primary" />}
-                label="Нужен курьер"
-              />
+            <Grid item xs={12} sm={6} className={myStyles.gridContentEnd}>
+              <Tooltip title={deliveriTooltip}>
+                <FormControlLabel
+                  control={<Checkbox value="checkedB" color="primary" />}
+                  label="Нужен курьер"
+                  labelPlacement="start"
+                />
+              </Tooltip>
             </Grid>
 
-            <Grid item xs={12} sm={6} />
+            <Grid item xs={12} sm={6}>
+              <DistanceSlider />
+            </Grid>
           </Grid>
         </Paper>
       </Container>

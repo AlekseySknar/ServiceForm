@@ -14,19 +14,19 @@ const useStyles = makeStyles(theme => ({
 
 const marks = [
   {
-    value: 2,
+    value: 4,
     label: "2 км"
   },
   {
-    value: 5,
+    value: 16,
     label: "5 км"
   },
   {
-    value: 10,
+    value: 33,
     label: "10 км"
   },
   {
-    value: 30,
+    value: 100,
     label: "30 км"
   }
 ];
@@ -39,18 +39,18 @@ export default function DistanceSlider() {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
-      <div className={classes.margin} />
+    <div>
       <Typography id="discrete-slider-always" gutterBottom>
-        Always visible
+        Сервис не дальше чем:
       </Typography>
       <Slider
-        defaultValue={80}
+        defaultValue={5}
         getAriaValueText={valuetext}
         aria-labelledby="discrete-slider-always"
-        step={10}
+        step={4}
         marks={marks}
         valueLabelDisplay="on"
+        disa
       />
     </div>
   );
