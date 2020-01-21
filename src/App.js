@@ -5,6 +5,9 @@ import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 import Typography from "@material-ui/core/Typography";
+import Checkbox from "@material-ui/core/Checkbox";
+import FormGroup from "@material-ui/core/FormGroup";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
 
 import PhoneAndroidRoundedIcon from "@material-ui/icons/PhoneAndroidRounded";
 
@@ -88,9 +91,14 @@ function App() {
               />
             </Grid>
 
-            <Grid item xs={12}>
-              <h1>HH</h1>
+            <Grid item xs={12} sm={6}>
+              <FormControlLabel
+                control={<Checkbox value="checkedB" color="primary" />}
+                label="Нужен курьер"
+              />
             </Grid>
+
+            <Grid item xs={12} sm={6} />
           </Grid>
         </Paper>
       </Container>
