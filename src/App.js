@@ -36,7 +36,10 @@ const useStyles = makeStyles(theme => ({
   },
   gridContentEnd: {
     display: "inline-flex",
-    justifyContent: "flex-end"
+    justifyContent: "flex-end",
+    [theme.breakpoints.down("xs")]: {
+      justifyContent: "center"
+    }
   }
 }));
 
@@ -48,7 +51,12 @@ function App() {
   return (
     <div>
       <Container maxWidth="md">
-        <Paper>
+        <Paper
+          style={{
+            background:
+              "radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%)"
+          }}
+        >
           <div className={myStyles.paperHead}>
             <Typography
               variant="h4"
@@ -111,6 +119,18 @@ function App() {
 
             <Grid item xs={12} sm={6}>
               <DistanceSlider />
+            </Grid>
+
+            <Grid item xs={12}>
+              <TextField
+                id="outlined-multiline-static"
+                label="Комментарий"
+                multiline
+                rows="4"
+                defaultValue="Здесь вы можете поделиться подробностями поломки"
+                variant="outlined"
+                fullWidth
+              />
             </Grid>
           </Grid>
         </Paper>
