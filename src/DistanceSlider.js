@@ -19,11 +19,11 @@ const marks = [
   },
   {
     value: 8,
-    label: "6 км"
+    label: "8 км"
   },
   {
     value: 15,
-    label: "10 км"
+    label: "15 км"
   },
   {
     value: 30,
