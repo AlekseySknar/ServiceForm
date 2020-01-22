@@ -1,5 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import ServiceForm from "./ServiceForm";
+import App from "./App";
 
-ReactDOM.render(<ServiceForm />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById("root"));
