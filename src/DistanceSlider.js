@@ -14,25 +14,25 @@ const useStyles = makeStyles(theme => ({
 
 const marks = [
   {
-    value: 4,
+    value: 2,
     label: "2 км"
   },
   {
-    value: 16,
-    label: "5 км"
+    value: 8,
+    label: "6 км"
   },
   {
-    value: 33,
+    value: 15,
     label: "10 км"
   },
   {
-    value: 100,
+    value: 30,
     label: "30 км"
   }
 ];
 
 function valuetext(value) {
-  return `${value}км`;
+  if (value <= 30) return `${value}км`;
 }
 
 export default function DistanceSlider() {
@@ -47,10 +47,10 @@ export default function DistanceSlider() {
         defaultValue={5}
         getAriaValueText={valuetext}
         aria-labelledby="discrete-slider-always"
-        step={4}
+        step={2}
         marks={marks}
         valueLabelDisplay="on"
-        disa
+        max={32}
       />
     </div>
   );

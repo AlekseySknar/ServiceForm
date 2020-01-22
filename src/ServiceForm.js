@@ -11,6 +11,7 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import DistanceSlider from "./DistanceSlider";
 import Tooltip from "@material-ui/core/Tooltip";
 import Button from "@material-ui/core/Button";
+import Strings from "./Strings/main";
 
 import PhoneAndroidRoundedIcon from "@material-ui/icons/PhoneAndroidRounded";
 
@@ -45,7 +46,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-function App() {
+function ServiceForm() {
   const myStyles = useStyles();
   const deliveriTooltip =
     "Наш курьер увезет ваше устройство, и больше вы его не увидите!";
@@ -65,7 +66,7 @@ function App() {
               align="center"
               className={myStyles.headerText}
             >
-              Поиск сервиса
+              {Strings.serviceForm.formname}
             </Typography>
           </div>
 
@@ -92,7 +93,7 @@ function App() {
                 required
                 id="firstName"
                 name="firstName"
-                label="Производитель"
+                label={Strings.serviceForm.manufacturer}
                 fullWidth
                 autoComplete="fname"
               />
@@ -103,7 +104,7 @@ function App() {
                 required
                 id="lastName"
                 name="lastName"
-                label="Модель"
+                label={Strings.serviceForm.model}
                 fullWidth
                 autoComplete="lname"
               />
@@ -113,7 +114,7 @@ function App() {
               <Tooltip title={deliveriTooltip}>
                 <FormControlLabel
                   control={<Checkbox value="checkedB" color="primary" />}
-                  label="Нужен курьер"
+                  label={Strings.serviceForm.needCourier}
                   labelPlacement="start"
                 />
               </Tooltip>
@@ -129,7 +130,7 @@ function App() {
                 label="Комментарий"
                 multiline
                 rows="4"
-                defaultValue="Здесь вы можете поделиться подробностями поломки"
+                defaultValue={Strings.serviceForm.commentText}
                 variant="outlined"
                 fullWidth
               />
@@ -137,7 +138,7 @@ function App() {
 
             <Grid item xs={12}>
               <Button variant="contained" color="primary" fullWidth>
-                Поиск...
+                {Strings.serviceForm.searchButton}
               </Button>
             </Grid>
           </Grid>
@@ -147,4 +148,4 @@ function App() {
   );
 }
 
-export default App;
+export default ServiceForm;
